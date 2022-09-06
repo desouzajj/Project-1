@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float hp = 100;
 
-
+    public Transform particle;
 
 
     public void TakeDamage(float damage)
@@ -17,7 +17,8 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log(hp);
             //Instantiate(fractured, transform.position, transform.rotation); //Spawn in the broken version
-            Destroy(gameObject);
+            particle.GetComponent<ParticleSystem>().Play(true);
+            Destroy(gameObject, .5f);
         }
     }
 }
