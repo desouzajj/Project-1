@@ -16,7 +16,7 @@ public class AmmoBox : MonoBehaviour
         {
             Debug.Log("add ammo here");
             BulletCountUI.ammoClip += 20;
-           // Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }
