@@ -13,12 +13,22 @@ public class Bullet : MonoBehaviour
     List<ParticleCollisionEvent> colEvents = new List<ParticleCollisionEvent>();
 
 
+  
+
+  
+
+    public float bulletTime = 2f;
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && BulletCountUI.ammoClip > 0)
         {
             particle.Play();
+            //StartCoroutine(BulletCount());
+             BulletCountUI.ammoClip -= 1;
+   
         }
+        
     }
     private void OnParticleCollision(GameObject other)
     {
@@ -35,4 +45,16 @@ public class Bullet : MonoBehaviour
             en.TakeDamage(damage);
         }
     }
+
+    IEnumerator BulletCount()
+    {
+        yield return new WaitForSeconds(bulletTime);
+        particle.Play();
+       
+        Debug.Log(BulletCountUI.ammoClip);
+       // Debug.Log("delayed here");
+    }
+
+  
 }
+

@@ -18,9 +18,12 @@ public class Enemy : MonoBehaviour
             Debug.Log(hp);
             //Instantiate(fractured, transform.position, transform.rotation); //Spawn in the broken version
             Instantiate(particle, transform.position, Quaternion.identity);
-
+           
             
             Destroy(gameObject, .5f);
+            
         }
     }
+
+
 }
