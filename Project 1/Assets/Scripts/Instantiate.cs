@@ -25,7 +25,7 @@ public class Instantiate : MonoBehaviour
         GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-10f, 70f), Random.Range(5f, 40f), -200f), Quaternion.identity);
              //   Debug.Log("spawn");
         StartCoroutine(enemySpawn(interval, enemy));
-
+       
     }
 
 

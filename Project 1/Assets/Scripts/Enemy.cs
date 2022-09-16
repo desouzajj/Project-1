@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
         if(hp <= 0)
         {
-            Debug.Log(hp);
+           // Debug.Log(hp);
             //Instantiate(fractured, transform.position, transform.rotation); //Spawn in the broken version
             Instantiate(particle, transform.position, Quaternion.identity);
            
@@ -23,7 +23,9 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject, .5f);
             
         }
+       
     }
 
 
+    
 }
