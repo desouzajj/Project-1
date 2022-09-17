@@ -8,7 +8,15 @@ public class Enemy : MonoBehaviour
 
     public ParticleSystem particle;
 
+    void Awake()
+    {
+        var outline = gameObject.AddComponent<Outline>();
+        outline.OutlineMode = Outline.Mode.OutlineAll;
+        outline.OutlineColor = Color.white;
+        outline.OutlineWidth = 2f;
+       // outline.enabled;
 
+    }
     public void TakeDamage(float damage)
     {
         hp -= damage;
