@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class BulletCountUI : MonoBehaviour
 {
     private Text bulletCount;
-    public static int ammoClip = 30;
+    public static int ammoClip = 10000;
     // Start is called before the first frame update
     void Start()
     {

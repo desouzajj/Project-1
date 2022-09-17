@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && BulletCountUI.ammoClip > 0)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && BulletCountUI.ammoClip > 0 && Score.scoreValue >=0)
         {
             particle.Play();
             //StartCoroutine(BulletCount());
@@ -46,14 +46,14 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    IEnumerator BulletCount()
-    {
-        yield return new WaitForSeconds(bulletTime);
-        particle.Play();
-       
-        Debug.Log(BulletCountUI.ammoClip);
-       // Debug.Log("delayed here");
-    }
+   // IEnumerator BulletCount()
+   // {
+   //     yield return new WaitForSeconds(bulletTime);
+   //     particle.Play();
+   //    
+   //     Debug.Log(BulletCountUI.ammoClip);
+   //    // Debug.Log("delayed here");
+   // }
 
   
 }
